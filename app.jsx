@@ -1,26 +1,16 @@
 var PLAYERS = [
   {
-    name: "Jim Hoskins",
-    score: 31,
-    id: 1,
-  },
-  {
-    name: "Andrew Chalkley",
-    score: 35,
-    id: 2,
-  },
-  {
-    name: "Alena Holligan",
-    score: 42,
-    id: 3,
+    name: "Elon Musk",
+    score: 41,
+    id: 0,
   },
   {
     name: "Esdras Lopez",
-    score: 40,
-    id: 4,
+    score: 20,
+    id: 1,
   },
 ];
-var nextId = 5;
+var nextId = PLAYERS.length;
   
 var AddPlayerForm = React.createClass({
   propTypes: {
