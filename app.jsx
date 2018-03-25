@@ -40,10 +40,11 @@ var AddPlayerForm = React.createClass({
   onSubmit: function(e) {
     e.preventDefault();
   
+    if(this.state.name) {
     this.props.onAdd(this.state.name);
     this.setState({name: ""});
+    }
   },
-  
   
   render: function() {
     return (
@@ -133,8 +134,6 @@ Player.propTypes = {
   onRemove: React.PropTypes.func.isRequired,
 };
 
-
-
 var Application = React.createClass({
   propTypes: {
     title: React.PropTypes.string,
@@ -199,7 +198,5 @@ var Application = React.createClass({
     );
   }
 });  
-
-
 
 ReactDOM.render(<Application initialPlayers={PLAYERS}/>, document.getElementById('container'));
