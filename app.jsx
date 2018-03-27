@@ -56,13 +56,13 @@ var Stopwatch = React.createClass({
       previousTime: Date.now(),
     })
   },
-  
+
   render: function() {
-    var seconds = Math.floor(this.state.elapsedTime/1000);
+    var time = new Date(this.state.elapsedTime).toISOString().slice(11, -2);
     return (
       <div className="stopwatch">
         <h2>Stopwatch</h2>
-        <div className="stopwatch-time">{seconds}</div>
+        <div className="stopwatch-time">{time}</div>
         { this.state.running ? 
           <button onClick={this.onStop}>Stop</button> 
           :
