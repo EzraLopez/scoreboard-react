@@ -58,7 +58,17 @@ var Stopwatch = React.createClass({
   },
 
   render: function() {
-    var time = new Date(this.state.elapsedTime).toISOString().slice(11, -2);
+    var elapsedTime = this.state.elapsedTime;
+    // time format: HH:mm:ss.ss
+    var time = new Date(elapsedTime).toISOString().slice(11, -2);
+    var oneMinute = 1000 * 60;
+    var oneHour = oneMinute * 60;
+    if(elapsedTime < oneMinute) {
+      time = time.slice(6);
+    } 
+    else if(elapsedTime < oneHour) {
+      time = time.slice(3)
+    }
     return (
       <div className="stopwatch">
         <h2>Stopwatch</h2>
